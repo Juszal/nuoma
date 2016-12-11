@@ -15,8 +15,15 @@
                         <a class="navbar-brand" href="<?php echo $config['baseUrl'] . 'index.php'?>">CarRental</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Automobiliai</a></li>  
-                        <li><a href="<?php echo $config['baseUrl'] . 'irangos_perziura.php'?>">Papildoma įranga</a></li>
+                        <li><a href="#">Automobiliai</a></li> 
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Papildoma įranga
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $config['baseUrl'] . 'irangos_perziura.php'?>">Įrangos peržiūra</a></li>
+                                <li><a href="<?php echo $config['baseUrl'] . 'irangos_ivedimas.php'?>">Pridėti įrangą</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registracija</a></li>
