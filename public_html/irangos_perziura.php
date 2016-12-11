@@ -5,13 +5,6 @@
     
     require_once TEMPLATES_PATH . 'menu.php';
     
-    $dbc = mysqli_connect($config['db']['hostname'], $config['db']['username'], 
-                                $config['db']['password'], $config['db']['database']);
-    if (!$dbc) 
-    {
-        die('Negaliu prisijungti: ' . mysqli_error($dbc));
-    }
-    
     $nav_query = 'SELECT * FROM Navigacijos';
     $nav_result = @mysqli_query($dbc, $nav_query);
     
