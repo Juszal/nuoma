@@ -4,14 +4,6 @@
     $pageTitle = 'Įrangos peržiūra';
     
     require_once TEMPLATES_PATH . 'menu.php';
-    
-    $dbc = mysqli_connect($config['db']['hostname'], $config['db']['username'], 
-                                $config['db']['password'], $config['db']['database']);
-    if (!$dbc) 
-    {
-        die('Negaliu prisijungti: ' . mysqli_error($dbc));
-    }
-   
 	
 	if (empty($_POST)==false){
 		$minFieldLength = 3;
