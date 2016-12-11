@@ -7,10 +7,13 @@
     
     $dbc = mysqli_connect($config['db']['hostname'], $config['db']['username'], 
                                 $config['db']['password'], $config['db']['database']);
-		if (!$dbc) 
-		{
-			die('Negaliu prisijungti: ' . mysqli_error($dbc));
-		}
+    if (!$dbc) 
+    {
+        die('Negaliu prisijungti: ' . mysqli_error($dbc));
+    }
+    
+    $query = 'SELECT * FROM Navigacijos';
+    $result = @mysqli_query($dbc, $query);
 ?>
 
 <div class="container">
@@ -31,20 +34,21 @@
             </tr>
 	</thead>
 	<tbody>
-            <!--<?php
+            <?php
 		while ($row = mysqli_fetch_array($result))
                 {
                     echo "<tr>"
-                            .	"<td>" . $row['komp_m'] . "</td>"
-                            .	"<td>" . $row['mon_m'] . "</td>"
-                            .	"<td>" . $row['klav_m'] . "</td>"
-                            .	"<td>" . $row['pel_m'] . "</td>"
-                            .	"<td>" . array_sum(array($row['komp_k'], $row['mon_k'], $row['klav_k'], $row['pel_k'])) . "</td>"
-                            .	"<td>" . $row['name'] . "</td>"
-                            .	"<td>" . $row['mail'] . "</td>"
+                            .	"<td>" . $row['pavadinimas'] . "</td>"
+                            .	"<td>" . $row['zemelapio_metai'] . "</td>"
+                            .	"<td>" . $row['istrizaine'] . "</td>"
+                            .	"<td>" . $row['vidine_atmintis'] . "</td>"
+                            .	"<td>" . $row['bluetooth'] . "</td>"
+                            .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
+                            .	"<td>" . $row['komentarai'] . "</td>"
+                            .   "<td>" . $row['ivedimo_data'] . "</td>"
                             .	"</tr>";
 		}
-            ?>-->
+            ?>
 	</tbody>
     </table>
 </div>
