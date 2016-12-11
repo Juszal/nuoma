@@ -46,7 +46,7 @@
                             .	"<td>" . $row['istrizaine'] . " cm" . "</td>"
                             .	"<td>" . $row['vidine_atmintis'] . " mb" . "</td>"
                             .	"<td>" . $row['bluetooth'] . "</td>"
-                            .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
+                            .	"<td>" . $row['isigyjimo_kaina'] . " Eur" . "</td>"
                             .	"<td>" . $row['komentarai'] . "</td>"
                             .   "<td>" . $row['ivedimo_data'] . "</td>"
                             .	"</tr>";
@@ -75,8 +75,8 @@
                     echo "<tr>"
                             .	"<td>" . $row['pavadinimas'] . "</td>"
                             .	"<td>" . $row['spalva'] . "</td>"
-                            .	"<td>" . $row['svoris'] . "</td>"
-                            .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
+                            .	"<td>" . $row['svoris'] . " kg" . "</td>"
+                            .	"<td>" . $row['isigyjimo_kaina'] . " Eur" . "</td>"
                             .	"<td>" . $row['komentarai'] . "</td>"
                             .   "<td>" . $row['ivedimo_data'] . "</td>"
                             .	"</tr>";
