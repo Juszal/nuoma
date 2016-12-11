@@ -1,8 +1,15 @@
 <?php
+    require_once '../app.php';
+    
+    $pageTitle = 'Įrangos peržiūra';
+    
+    require_once TEMPLATES_PATH . 'menu.php';
+    
+?>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<h3>vidus</h3>
 
+
+<?php
+    require_once TEMPLATES_PATH . 'footer.php';
+?>
