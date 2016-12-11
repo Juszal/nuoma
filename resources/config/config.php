@@ -3,4 +3,4 @@
 $config['debug'] = true;
 
 
-$config['baseUrl'] = "http://localhost/nuoma/";
+$config['baseUrl'] = "http://localhost/nuoma/public_html/";

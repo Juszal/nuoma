@@ -1,3 +1,6 @@
+<?php   
+    require_once CONFIG_PATH . 'config.php';   
+?>
 <!DOCTYPE html>
 <html>  
     <head>  
@@ -12,7 +15,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">CarRental</a>
+                        <a class="navbar-brand" href="<?php echo $config['baseUrl'] . 'index.php'?>">CarRental</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li><a href="#">Automobiliai</a></li>    
