@@ -12,8 +12,11 @@
         die('Negaliu prisijungti: ' . mysqli_error($dbc));
     }
     
-    $query = 'SELECT * FROM Navigacijos';
-    $result = @mysqli_query($dbc, $query);
+    $nav_query = 'SELECT * FROM Navigacijos';
+    $nav_result = @mysqli_query($dbc, $nav_query);
+    
+    $ked_query = 'SELECT * FROM Kedutes';
+    $ked_result = @mysqli_query($dbc, $ked_query);
 ?>
 
 <div class="container">
@@ -28,14 +31,14 @@
 		<th>Įstrižainė</th>  
 		<th>Atmintis</th>
 		<th>Bluetooth</th>
-		<th>Kaina</th>
+		<th>Įsigyjimo kaina</th>
 		<th>Komentarai</th>
                 <th>Įvedimo data</th>
             </tr>
 	</thead>
 	<tbody>
             <?php
-		while ($row = mysqli_fetch_array($result))
+		while ($row = mysqli_fetch_array($nav_result))
                 {
                     echo "<tr>"
                             .	"<td>" . $row['pavadinimas'] . "</td>"
@@ -43,6 +46,36 @@
                             .	"<td>" . $row['istrizaine'] . "</td>"
                             .	"<td>" . $row['vidine_atmintis'] . "</td>"
                             .	"<td>" . $row['bluetooth'] . "</td>"
+                            .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
+                            .	"<td>" . $row['komentarai'] . "</td>"
+                            .   "<td>" . $row['ivedimo_data'] . "</td>"
+                            .	"</tr>";
+		}
+            ?>
+	</tbody>
+    </table>
+    <div class="row">
+	<h3>Kėdutės</h3>
+    </div>
+    <table class="table table-bordered">
+	<thead>
+            <tr>
+		<th>Pavadinimas</th>
+		<th>Spalva</th>
+		<th>Svoris</th>  
+		<th>Įsigyjimo kaina</th>
+		<th>Komentarai</th>
+                <th>Įvedimo data</th>
+            </tr>
+	</thead>
+	<tbody>
+            <?php
+		while ($row = mysqli_fetch_array($ked_result))
+                {
+                    echo "<tr>"
+                            .	"<td>" . $row['pavadinimas'] . "</td>"
+                            .	"<td>" . $row['spalva'] . "</td>"
+                            .	"<td>" . $row['svoris'] . "</td>"
                             .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
                             .	"<td>" . $row['komentarai'] . "</td>"
                             .   "<td>" . $row['ivedimo_data'] . "</td>"
