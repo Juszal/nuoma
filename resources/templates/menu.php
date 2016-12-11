@@ -25,9 +25,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registracija</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Prisijungti</a></li>
-                    </ul>
+					<?php if(user_logged_in()){?>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="atsijungti.php"> Atsijungti</a></li>
+						</ul>
+					<?php }else{?>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="registracija.php"><span class="glyphicon glyphicon-user"></span> Registracija</a></li>
+							<li><a href="prisijungti.php"><span class="glyphicon glyphicon-log-in"></span> Prisijungti</a></li>
+						</ul>
+					<?php }?>
                 </div>
             </nav>

@@ -8,3 +8,7 @@ function dd($obj, $die = true){
         die();
     }
 }
+
+function user_logged_in(){
+	return (isset($_SESSION['id'])) ? true : false;
+}

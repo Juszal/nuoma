@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //paths
 define("LIBRARY_PATH", realpath(dirname(__FILE__)) . '/resources/library/');    
