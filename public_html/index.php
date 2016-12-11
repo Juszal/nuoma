@@ -8,3 +8,8 @@
 ?>
 
 <h3>vidus</h3>
+
+
+<?php
+    require_once TEMPLATES_PATH . 'footer.php';
+?>
