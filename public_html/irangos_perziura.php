@@ -43,7 +43,7 @@
                     echo "<tr>"
                             .	"<td>" . $row['pavadinimas'] . "</td>"
                             .	"<td>" . $row['zemelapio_metai'] . "</td>"
-                            .	"<td>" . $row['istrizaine'] . "</td>"
+                            .	"<td>" . $row['istrizaine'] . " cm" . "</td>"
                             .	"<td>" . $row['vidine_atmintis'] . "</td>"
                             .	"<td>" . $row['bluetooth'] . "</td>"
                             .	"<td>" . $row['isigyjimo_kaina'] . "</td>"
