@@ -13,13 +13,13 @@ function getExtras($dbc){
 }
 
 function addNavigacija($dbc, $navPost){
-    $pavadinimas = $navPost['pavadinimas'];
-    $zemelapio_metai = $navPost['zemelapio_metai'];
-    $istrizaine = $navPost['istrizaine'];
-    $vidine_atmintis = $navPost['vidine_atmintis'];
-    $bluetooth = $navPost['bluetooth'];
-    $isigyjimo_kaina = $navPost['isigyjimo_kaina'];
-    $komentarai = $navPost['komentarai'];
+    $pavadinimas = mysqli_real_escape_string($dbc, $navPost['pavadinimas']);
+    $zemelapio_metai = mysqli_real_escape_string($dbc, $navPost['zemelapio_metai']);
+    $istrizaine = mysqli_real_escape_string($dbc, $navPost['istrizaine']);
+    $vidine_atmintis = mysqli_real_escape_string($dbc, $navPost['vidine_atmintis']);
+    $bluetooth = mysqli_real_escape_string($dbc, $navPost['bluetooth']);
+    $isigyjimo_kaina = mysqli_real_escape_string($dbc, $navPost['isigyjimo_kaina']);
+    $komentarai = mysqli_real_escape_string($dbc, $navPost['komentarai']);
         
     $query = "INSERT INTO Navigacijos(pavadinimas, zemelapio_metai, istrizaine,
                                 vidine_atmintis, bluetooth, isigyjimo_kaina,

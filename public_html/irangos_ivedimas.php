@@ -6,23 +6,7 @@
     require_once TEMPLATES_PATH . 'menu.php';
     
     if (isset($_POST["navigacija"])){
-        /*$pavadinimas = $_POST['pavadinimas'];
-        $zemelapio_metai = $_POST['zemelapio_metai'];
-        $istrizaine = $_POST['istrizaine'];
-        $vidine_atmintis = $_POST['vidine_atmintis'];
-        $bluetooth = $_POST['bluetooth'];
-        $isigyjimo_kaina = $_POST['isigyjimo_kaina'];
-        $komentarai = $_POST['komentarai'];
-        
-        $query = "INSERT INTO Navigacijos(pavadinimas, zemelapio_metai, istrizaine,
-                                vidine_atmintis, bluetooth, isigyjimo_kaina,
-                                komentarai)
-			VALUES ('$pavadinimas', '$zemelapio_metai', '$istrizaine', 
-                            '$vidine_atmintis', '$bluetooth', '$isigyjimo_kaina', 
-                            '$komentarai')";
-
-        $result = @mysqli_query($dbc, $query);*/
-     addNavigacija($dbc, $_POST);
+        addNavigacija($dbc, $_POST);
     }
     
 ?>
