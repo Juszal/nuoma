@@ -5,11 +5,7 @@
     
     require_once TEMPLATES_PATH . 'menu.php';
     
-    $nav_query = 'SELECT * FROM Navigacijos';
-    $nav_result = @mysqli_query($dbc, $nav_query);
-    
-    $ked_query = 'SELECT * FROM Kedutes';
-    $ked_result = @mysqli_query($dbc, $ked_query);
+    $result = getExtras($dbc);   
 ?>
 
 <div class="container">
@@ -31,7 +27,7 @@
 	</thead>
 	<tbody>
             <?php
-		while ($row = mysqli_fetch_array($nav_result))
+		while ($row = mysqli_fetch_array($result['nav_result']))
                 {
                     echo "<tr>"
                             .	"<td>" . $row['pavadinimas'] . "</td>"
@@ -63,7 +59,7 @@
 	</thead>
 	<tbody>
             <?php
-		while ($row = mysqli_fetch_array($ked_result))
+		while ($row = mysqli_fetch_array($result['ked_result']))
                 {
                     echo "<tr>"
                             .	"<td>" . $row['pavadinimas'] . "</td>"
