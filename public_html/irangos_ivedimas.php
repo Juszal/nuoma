@@ -39,7 +39,7 @@
 	</div>
     </div>
     <div class="form-horizontal col-md-6">
-        <form action="irangos_ivedimas.php" method="post" id="forma">
+        <form action="irangos_ivedimas.php" method="post" id="nav_forma">
             <div class="form-group">
                 <label class="col-md-3 control-label">Pavadinimas</label>
                 <div class="col-md-9">
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </form>
-        <form action="irangos_ivedimas.php" method="post" id="forma">
+        <form action="irangos_ivedimas.php" method="post" id="ked_forma">
             <div class="form-group">
                 <label class="col-md-3 control-label">Pavadinimas</label>
                 <div class="col-md-9">
@@ -141,51 +141,13 @@
 });
 
     function navForm(){
-        var html ='<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Pavadinimas</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="pavadinimas" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Žemėlapio metai</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="zemelapio_metai" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Įstrižainė</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="istrizaine" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Vidinė atmintis</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="vidine_atmintis" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Bluetooth</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="bluetooth" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Įsigyjimo kaina</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="isigyjimo_kaina" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<label class="col-md-3 control-label">Komentarai</label>' +
-                    '<div class="col-md-9">' +
-                        '<input name="komentarai" class="form-control" />' +
-                    '</div></div>' +
-                    '<div class="form-group">' +
-                    '<div>' +
-                    '<input type="submit" name="navigacija" value="Įvesti" class="btn btn-default btn pull-left" />' +
-                    '</div></div>';
-        
-        document.getElementById('forma').innerHTML = html;
-    };
+        document.getElementById("nav_forma").style.display="block";
+        document.getElementById("ked_forma").style.display="none";
+    }
     
      function kedForm(){
-        document.getElementById('forma').innerHTML = 'Kedute';
+        document.getElementById("nav_forma").style.display="none";
+        document.getElementById("ked_forma").style.display="block";
     }
 </script>
 
