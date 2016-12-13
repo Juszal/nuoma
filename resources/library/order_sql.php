@@ -30,3 +30,18 @@ function addNavigacija($dbc, $navPost){
 
     $result = @mysqli_query($dbc, $query);
 }
+
+function addNavigacija($dbc, $navPost){
+    $pavadinimas = mysqli_real_escape_string($dbc, $navPost['pavadinimas']);
+    $spalva = mysqli_real_escape_string($dbc, $navPost['spalva']);
+    $svoris = mysqli_real_escape_string($dbc, $navPost['svoris']);
+    $isigyjimo_kaina = mysqli_real_escape_string($dbc, $navPost['isigyjimo_kaina']);
+    $komentarai = mysqli_real_escape_string($dbc, $navPost['komentarai']);
+        
+    $query = "INSERT INTO Kedutes(pavadinimas, spalva, svoris,
+                                isigyjimo_kaina, komentarai)
+			VALUES ('$pavadinimas', '$spalva', '$svoris', 
+                            '$isigyjimo_kaina', '$komentarai')";
+
+    $result = @mysqli_query($dbc, $query);
+}
