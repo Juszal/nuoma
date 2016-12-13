@@ -37,8 +37,7 @@
 		$rajonas = empty($_POST['rajonas']) ? '' : $_POST['rajonas'];
 		$namo_nr = empty($_POST['namo_nr']) ? '0' : $_POST['namo_nr'];
 		if($error == false){
-			@mysqli_query($dbc, "INSERT INTO `klientas`(`slaptas_klausimas_id`, 
-													`slaptas_atsakymas`, 
+			@mysqli_query($dbc, "INSERT INTO `klientas`(
 													`vardas`,
 													`pavarde`, 
 													`slaptazodis`,
@@ -51,11 +50,8 @@
 													`rajonas`, 
 													`namo_nr`, 
 													`registracijos_data`, 
-													`lygis`, 
 													`pakvietimo_kodas`
 													) VALUES (
-													'0',
-													'',
 													'".$_POST['vardas']."',
 													'".$_POST['pavarde']."',
 													'".md5($_POST['slaptazodis'])."',
@@ -68,8 +64,7 @@
 													'".$rajonas."',
 													'".$namo_nr."',
 													NOW(),
-													'0',
-													'')") or die ("query klaida". mysql_error());
+													'".substr(md5(microtime()),rand(0,26),5)."')") or die ("query klaida". mysql_error());
 			echo "registracija sekminga. Galite prisijungti";
 			}
 	}

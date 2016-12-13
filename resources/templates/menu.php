@@ -30,10 +30,12 @@
                         <li><a href="<?php echo $config['baseUrl'] . 'uzsakymu_perziura.php'?>">Užsakymai</a></li>
                     </ul>
 					<?php if(user_logged_in()){?>
+					<!-- prisijungusio vartotojo meniu -->
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="atsijungti.php"> Atsijungti</a></li>
 						</ul>
 					<?php }else{?>
+					<!-- neprisijungusio vartotojo meniu -->
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="registracija.php"><span class="glyphicon glyphicon-user"></span> Registracija</a></li>
 							<li><a href="prisijungti.php"><span class="glyphicon glyphicon-log-in"></span> Prisijungti</a></li>
