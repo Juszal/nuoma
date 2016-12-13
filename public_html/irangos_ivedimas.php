@@ -9,6 +9,9 @@
         addNavigacija($dbc, $_POST);
     }
     
+    if (isset($_POST["kedute"])){
+        addKedute($dbc, $_POST);
+    }
 ?>
 
 <div class="container">
@@ -106,7 +109,7 @@
             </div>
             <div class="form-group">
                 <div>
-                    <input type="submit" name="navigacija" value="Įvesti" class="btn btn-default btn pull-left" />
+                    <input type="submit" name="kedute" value="Įvesti" class="btn btn-default btn pull-left" />
                 </div>
             </div>
         </form>
