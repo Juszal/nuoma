@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Pavadinimas</label>
                 <div class="col-md-9">
-                    <input name="pavadinimas" class="form-control"  required="required"/>
+                    <input name="pavadinimas" class="form-control" required="required"/>
                 </div>
             </div>
             <div class="form-group">
@@ -85,7 +85,7 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Pavadinimas</label>
                 <div class="col-md-9">
-                    <input name="pavadinimas" class="form-control" />
+                    <input name="pavadinimas" class="form-control" required="required" />
                 </div>
             </div>
             <div class="form-group">
@@ -97,19 +97,19 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Svoris</label>
                 <div class="col-md-9">
-                    <input name="svoris" class="form-control" />
+                    <input type="number" step="0.01" name="svoris" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Įsigyjimo kaina</label>
                 <div class="col-md-9">
-                    <input name="isigyjimo_kaina" class="form-control" />
+                    <input type="number" step="0.01" name="isigyjimo_kaina" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Komentarai</label>
                 <div class="col-md-9">
-                    <input name="komentarai" class="form-control" />
+                    <textarea rows="5" name="komentarai" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group">
