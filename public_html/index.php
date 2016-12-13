@@ -44,11 +44,14 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#datetimepickerstart').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm'
+        $('#datetimepickerstart').datetimepicker({           
+            format: 'YYYY-MM-DD HH:mm',
+            minDate: moment().add(1, 'd').toDate(),
+            useCurrent: false
         });
         $('#datetimepickerend').datetimepicker({
             format: 'YYYY-MM-DD HH:mm',
+            minDate: moment().add(1, 'd').toDate(),
             useCurrent: false //Important! See issue #1075
         });
         $("#datetimepickerstart").on("dp.change", function (e) {
