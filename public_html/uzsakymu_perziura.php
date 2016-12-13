@@ -5,7 +5,12 @@
     
     require_once TEMPLATES_PATH . 'menu.php';
     
-    $result = getOrders($dbc, date("Y-m-d H:i:s"));
+    if (isset($_GET["startdate"], $_GET["enddate"])){
+        $result = getOrders($dbc, $_GET["startdate"], $_GET["enddate"]);
+    }
+    else {
+        $result = getOrders($dbc, date("Y-m-d H:i:s"));
+    }
 ?>
 
 <div class="container">  
@@ -13,7 +18,7 @@
     <div class="row margin20">
         <div class="col-md-5">
             <div class="form-group">
-                <label class="col-md-4 control-label">Nuomos pradžia</label>
+                <label class="col-md-4 control-label">Nuomos pradžia nuo</label>
                 <div class="col-md-8">
                     <div class='input-group date' id='datetimepickerstart'>
                         <input name="startdate" type='text' class="form-control" id="orderStart" required="required" />
@@ -26,7 +31,7 @@
         </div>
         <div class="col-md-5">
             <div class="form-group">
-                <label class="col-md-4 control-label">Nuomos pabaiga</label>
+                <label class="col-md-4 control-label">Nuomos pradžia iki</label>
                 <div class="col-md-8">
                     <div class='input-group date' id='datetimepickerend'>
                         <input name="enddate" type='text' class="form-control" id="orderEnd" required="required" />
