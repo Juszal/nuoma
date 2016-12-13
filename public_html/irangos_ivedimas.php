@@ -57,7 +57,10 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Bluetooth</label>
                 <div class="col-md-9">
-                    <input name="bluetooth" class="form-control" />
+                    <select class="form-control" name="bluetooth">
+                        <option>Ne</option>
+                        <option>Taip</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
