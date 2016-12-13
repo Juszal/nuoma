@@ -130,6 +130,8 @@
 
 <script>
     $(document).ready(function() {
+    document.getElementById("nav_forma").style.display="none";
+    document.getElementById("ked_forma").style.display="none";
     $('input[type=radio][name=optradio]').change(function() {
         if (this.value == 'Navigacija') {
             navForm();
