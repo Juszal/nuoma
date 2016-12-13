@@ -7,66 +7,47 @@
 	
 	if (empty($_POST)==false){
 		$minFieldLength = 3;
-		$error = false;
+		$klaida = 0;
 		$require = array("vardas", "pavarde", "slaptazodis", "slaptazodis2", "el_pastas", "telefonas");
 		foreach($_POST as $key=>$val){
 			if (empty($val)  && in_array($key, $require)=== true){
 				echo "Butina uzpildyti privalomus laukelius";
-				$error = true;
+				$klaida = 1;
 				break;
 			}
 		}
+		
+		$klaida += tikrinkLauka('/^[0-9]+$/', $_POST['telefonas'], "<br>Telefonas gali buti tik is skaiciu <br>");
+		$klaida += tikrinkLauka('/^[a-zA-z]+$/i', $_POST['vardas'], "vardas gali buti tik is skaiciu<br>");
+		$klaida += tikrinkLauka('/^[a-zA-z]+$/i', $_POST['pavarde'], "pavarde gali buti tik is skaiciu<br>");
+		
+		$klaida += tikrinkLaukaJeiIvesta('/^[0-9]+$/', $_POST['namo_nr'], "namo nr gali buti tik is skaiciu <br>");
+		$klaida += tikrinkLaukaJeiIvesta('/^[a-zA-z]+$/i', $_POST['salis'], "salis gali buti tik is skaiciu<br>");
+		$klaida += tikrinkLaukaJeiIvesta('/^[a-zA-z]+$/i', $_POST['miestas'], "miestas gali buti tik is skaiciu<br>");
+		$klaida += tikrinkLaukaJeiIvesta('/^[a-zA-z]+$/i', $_POST['rajonas'], "rajonas gali buti tik is skaiciu<br>");
 		
 		$address = array("salis", "miestas", "adresas", "pasto_kodas", "rajonas");
 		foreach($_POST as $key=>$val){
 			if (!empty($val) && strlen($val) < $minFieldLength && in_array($key, $address)=== true){
 				echo "Gyvenamosios vietos adreso laukai neturi buti trumpesni nei ".$minFieldLength;
-				$error = true;
+				$klaida = 1;
 				break;
 			}
 		}
 		
-		//doto validate user email
+		if(strcmp($_POST['slaptazodis'], $_POST['slaptazodis2']) !== 0 ){
+			echo "slaptazodziai nesutampa";
+			$klaida = 1;
+		}
+		
+		$klaida += arElpastasEgzistuoja($dbc, $_POST['el_pastas'], "egzistuoja toks elpastas");
 		//doto check fields max lenght
 		//doto check if int is int
 		//doto check if passwords are equal
-		$salis = empty($_POST['salis']) ? '' : $_POST['salis'];
-		$miestas = empty($_POST['miestas']) ? '' : $_POST['miestas'];
-		$adresas = empty($_POST['adresas']) ? '' : $_POST['adresas'];
-		$pasto_kodas = empty($_POST['pasto_kodas']) ? '' : $_POST['pasto_kodas'];
-		$rajonas = empty($_POST['rajonas']) ? '' : $_POST['rajonas'];
-		$namo_nr = empty($_POST['namo_nr']) ? '0' : $_POST['namo_nr'];
-		if($error == false){
-			@mysqli_query($dbc, "INSERT INTO `klientas`(
-													`vardas`,
-													`pavarde`, 
-													`slaptazodis`,
-													`el_pastas`, 
-													`telefonas`, 
-													`salis`,
-													`miestas`, 
-													`adresas`, 
-													`pasto_kodas`, 
-													`rajonas`, 
-													`namo_nr`, 
-													`registracijos_data`, 
-													`pakvietimo_kodas`
-													) VALUES (
-													'".$_POST['vardas']."',
-													'".$_POST['pavarde']."',
-													'".md5($_POST['slaptazodis'])."',
-													'".$_POST['el_pastas']."',
-													'".$_POST['telefonas']."',
-													'".$salis."',
-													'".$miestas."',
-													'".$adresas."',
-													'".$pasto_kodas."',
-													'".$rajonas."',
-													'".$namo_nr."',
-													NOW(),
-													'".substr(md5(microtime()),rand(0,26),5)."')") or die ("query klaida". mysql_error());
-			echo "registracija sekminga. Galite prisijungti";
-			}
+		if($klaida == 0){
+			registruoti($dbc, $_POST);
+			header("Location: prisijungti.php");
+		}
 	}
 ?>
 

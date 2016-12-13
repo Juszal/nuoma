@@ -29,7 +29,7 @@
                         </li>
                         <li><a href="<?php echo $config['baseUrl'] . 'uzsakymu_perziura.php'?>">Užsakymai</a></li>
                     </ul>
-					<?php if(user_logged_in()){?>
+					<?php if(arPrisijunges()){?>
 					<!-- prisijungusio vartotojo meniu -->
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="atsijungti.php"> Atsijungti</a></li>

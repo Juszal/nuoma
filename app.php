@@ -13,6 +13,7 @@ require_once CONFIG_PATH . 'db.php';
 //libraries
 require_once LIBRARY_PATH . 'core.php';
 require_once LIBRARY_PATH . 'order_sql.php';
+require_once LIBRARY_PATH . 'user_sql.php';
 
 if($config['debug']){
     ini_set("error_reporting", "true");
