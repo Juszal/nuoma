@@ -33,25 +33,25 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Pavadinimas</label>
                 <div class="col-md-9">
-                    <input name="pavadinimas" class="form-control" />
+                    <input name="pavadinimas" class="form-control"  required="required"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Žemėlapio metai</label>
                 <div class="col-md-9">
-                    <input name="zemelapio_metai" class="form-control" />
+                    <input type= "number" name= "five_steps" max= "2025" min= "2000" name="zemelapio_metai" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Įstrižainė</label>
                 <div class="col-md-9">
-                    <input name="istrizaine" class="form-control" />
+                    <input type="number" step="0.01" name="istrizaine" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Vidinė atmintis</label>
                 <div class="col-md-9">
-                    <input name="vidine_atmintis" class="form-control" />
+                    <input type="number" step="0.01" name="vidine_atmintis" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
@@ -63,13 +63,13 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Įsigyjimo kaina</label>
                 <div class="col-md-9">
-                    <input name="isigyjimo_kaina" class="form-control" />
+                    <input type="number" step="0.01" name="isigyjimo_kaina" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Komentarai</label>
                 <div class="col-md-9">
-                    <input name="komentarai" class="form-control" />
+                    <textarea rows="5" name="komentarai" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group">
