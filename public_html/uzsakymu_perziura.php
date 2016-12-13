@@ -4,6 +4,8 @@
     $pageTitle = 'Užsakymai';
     
     require_once TEMPLATES_PATH . 'menu.php';
+    
+    $result = getOrders($dbc, date("Y-m-d H:i:s"));
 ?>
 
 <div class="container">  
@@ -55,7 +57,19 @@
             </tr>
 	</thead>
 	<tbody>
-
+            <?php
+		while ($row = mysqli_fetch_array($result))
+                {
+                    echo "<tr>"
+                            .	"<td>" . $row['pristatymo_laikas'] . "</td>"
+                            .	"<td>" . $row['grazinimo_laikas'] . "</td>"
+                            .	"<td>" . $row['pmiestas'] . ", " . $row['pgatve'] . ", " . $row['pnamo_nr'] . "</td>"
+                            .	"<td>" . $row['gmiestas'] . ", " . $row['ggatve'] . ", " . $row['gnamo_nr'] . "</td>"
+                            .	"<td>" . $row['marke'] . " " . $row['modelis'] . "</td>"
+                            .	"<td>" . $row['valstybinis_nr'] . "</td>"
+                            .	"</tr>";
+		}
+            ?>
 	</tbody>
     </table>
 </div>

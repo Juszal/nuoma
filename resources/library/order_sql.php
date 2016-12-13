@@ -46,7 +46,7 @@ function addKedute($dbc, $navPost){
     $result = @mysqli_query($dbc, $query);
 }
 
-function getOrders($dbc, $orderStart, $orderEnd){
+function getOrders($dbc, $orderStart, $orderEnd = '2025-12-31 00:00:00'){
     $query = "SELECT Uzsakymai.pristatymo_laikas,
                      Uzsakymai.grazinimo_laikas,
                      p.miestas pmiestas,
@@ -69,11 +69,11 @@ function getOrders($dbc, $orderStart, $orderEnd){
                     ON Modeliai.id = Automobiliai.id
                 LEFT JOIN Markes
                     ON Markes.id = Modeliai.id
-                WHERE pristatymo_laikas >= " . $orderStart . 
-                    " AND pristatymo_laikas <= " . $orderEnd .
-                " ORDER BY Uzsakymai.pristatymo_laikas ASC";
+                WHERE pristatymo_laikas >= '" . $orderStart . 
+                    "' AND pristatymo_laikas <= '" . $orderEnd .
+                "' ORDER BY Uzsakymai.pristatymo_laikas ASC";
     
     $result = @mysqli_query($dbc, $query);
-    
+
     return $result;
 }
