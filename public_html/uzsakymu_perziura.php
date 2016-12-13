@@ -58,7 +58,8 @@
                 <th>Pristatymo vieta</th>
 		<th>Grąžinimo vieta</th>
 		<th>Modelis</th>  
-		<th>Valst. Nr.</th>                             
+		<th>Valst. Nr.</th>
+                <th></th>
             </tr>
 	</thead>
 	<tbody>
@@ -72,6 +73,7 @@
                             .	"<td>" . $row['gmiestas'] . ", " . $row['ggatve'] . ", " . $row['gnamo_nr'] . "</td>"
                             .	"<td>" . $row['marke'] . " " . $row['modelis'] . "</td>"
                             .	"<td>" . $row['valstybinis_nr'] . "</td>"
+                            .   "<td><a href=" . $config['baseUrl'] . "uzsakymo_redagavimas.php?id=" . $row['uzsakymo_id'] . ">Detaliau</a>"
                             .	"</tr>";
 		}
             ?>

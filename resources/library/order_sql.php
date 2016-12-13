@@ -47,7 +47,8 @@ function addKedute($dbc, $navPost){
 }
 
 function getOrders($dbc, $orderStart, $orderEnd = '2025-12-31 00:00:00'){
-    $query = "SELECT Uzsakymai.pristatymo_laikas,
+    $query = "SELECT Uzsakymai.uzsakymo_id,
+                     Uzsakymai.pristatymo_laikas,
                      Uzsakymai.grazinimo_laikas,
                      p.miestas pmiestas,
                      p.gatve pgatve,
