@@ -7,10 +7,12 @@
     
     if (isset($_POST["navigacija"])){
         addNavigacija($dbc, $_POST);
+        header("Location: irangos_perziura.php");
     }
     
     if (isset($_POST["kedute"])){
         addKedute($dbc, $_POST);
+        header("Location: irangos_perziura.php");
     }
 ?>
 

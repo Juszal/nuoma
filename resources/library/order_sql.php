@@ -31,7 +31,7 @@ function addNavigacija($dbc, $navPost){
     $result = @mysqli_query($dbc, $query);
 }
 
-function addNavigacija($dbc, $navPost){
+function addKedute($dbc, $navPost){
     $pavadinimas = mysqli_real_escape_string($dbc, $navPost['pavadinimas']);
     $spalva = mysqli_real_escape_string($dbc, $navPost['spalva']);
     $svoris = mysqli_real_escape_string($dbc, $navPost['svoris']);
