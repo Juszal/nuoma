@@ -39,7 +39,92 @@
 	</div>
     </div>
     <div class="form-horizontal col-md-6">
-        <form action="irangos_ivedimas.php" method="post" id="forma"></form>
+        <form action="irangos_ivedimas.php" method="post" id="forma">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Pavadinimas</label>
+                <div class="col-md-9">
+                    <input name="pavadinimas" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Žemėlapio metai</label>
+                <div class="col-md-9">
+                    <input name="zemelapio_metai" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Įstrižainė</label>
+                <div class="col-md-9">
+                    <input name="istrizaine" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Vidinė atmintis</label>
+                <div class="col-md-9">
+                    <input name="vidine_atmintis" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Bluetooth</label>
+                <div class="col-md-9">
+                    <input name="bluetooth" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Įsigyjimo kaina</label>
+                <div class="col-md-9">
+                    <input name="isigyjimo_kaina" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Komentarai</label>
+                <div class="col-md-9">
+                    <input name="komentarai" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="submit" name="navigacija" value="Įvesti" class="btn btn-default btn pull-left" />
+                </div>
+            </div>
+        </form>
+        <form action="irangos_ivedimas.php" method="post" id="forma">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Pavadinimas</label>
+                <div class="col-md-9">
+                    <input name="pavadinimas" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Spalva</label>
+                <div class="col-md-9">
+                    <input name="spalva" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Svoris</label>
+                <div class="col-md-9">
+                    <input name="svoris" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Įsigyjimo kaina</label>
+                <div class="col-md-9">
+                    <input name="isigyjimo_kaina" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Komentarai</label>
+                <div class="col-md-9">
+                    <input name="komentarai" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="submit" name="navigacija" value="Įvesti" class="btn btn-default btn pull-left" />
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
