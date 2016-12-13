@@ -14,7 +14,7 @@
                 <label class="col-md-4 control-label">Nuomos pradžia</label>
                 <div class="col-md-8">
                     <div class='input-group date' id='datetimepickerstart'>
-                        <input name="startdate" type='text' class="form-control" id="orderStart" />
+                        <input name="startdate" type='text' class="form-control" id="orderStart" required="required" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -27,7 +27,7 @@
                 <label class="col-md-4 control-label">Nuomos pabaiga</label>
                 <div class="col-md-8">
                     <div class='input-group date' id='datetimepickerend'>
-                        <input name="enddate" type='text' class="form-control" id="orderEnd" />
+                        <input name="enddate" type='text' class="form-control" id="orderEnd" required="required" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
