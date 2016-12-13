@@ -40,6 +40,26 @@
         </div>
     </div>
     </form>
+    <div class="row">
+	<h3>Užsakymai</h3>
+    </div>
+    <table class="table table-bordered">
+	<thead>
+            <tr>
+		<th>Nuomos pradžia</th>
+		<th>Nuomos pabaiga</th>
+		<th>Modelis</th>  
+		<th>Valst. Nr.</th>
+		<th>Pristatymo vieta</th>
+		<th>Grąžinimo vieta</th>
+		<th>Būsena</th>
+                <th></th>
+            </tr>
+	</thead>
+	<tbody>
+
+	</tbody>
+    </table>
 </div>
 
 <script type="text/javascript">
