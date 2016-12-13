@@ -45,3 +45,35 @@ function addKedute($dbc, $navPost){
 
     $result = @mysqli_query($dbc, $query);
 }
+
+function getOrders($dbc, $orderStart, $orderEnd){
+    $query = "SELECT Uzsakymai.pristatymo_laikas,
+                     Uzsakymai.grazinimo_laikas,
+                     p.miestas pmiestas,
+                     p.gatve pgatve,
+                     p.namo_nr pnamo_nr,
+                     g.miestas gmiestas,
+                     g.gatve ggatve,
+                     g.namo_nr gnamo_nr,
+                     Automobiliai.valstybinis_nr,
+                     Modeliai.pavadinimas modelis,
+                     Markes.pavadinimas marke
+                FROM Uzsakymai
+                LEFT JOIN Adresai p
+                    ON p.adreso_id = Uzsakymai.pristatymo_adreso_id
+                LEFT JOIN Adresai g
+                    ON g.adreso_id = Uzsakymai.grazinimo_adreso_id
+                LEFT JOIN Automobiliai
+                    ON Automobiliai.id = Uzsakymai.automobilio_id
+                LEFT JOIN Modeliai
+                    ON Modeliai.id = Automobiliai.id
+                LEFT JOIN Markes
+                    ON Markes.id = Modeliai.id
+                WHERE pristatymo_laikas >= " . $orderStart . 
+                    " AND pristatymo_laikas <= " . $orderEnd .
+                " ORDER BY Uzsakymai.pristatymo_laikas ASC";
+    
+    $result = @mysqli_query($dbc, $query);
+    
+    return $result;
+}

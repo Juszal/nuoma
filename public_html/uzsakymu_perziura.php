@@ -51,10 +51,7 @@
                 <th>Pristatymo vieta</th>
 		<th>Grąžinimo vieta</th>
 		<th>Modelis</th>  
-		<th>Valst. Nr.</th>
-                <th>Priedai</th>
-                <th>Kliento komentarai</th>
-		<th>Vadybininko komentarai</th>               
+		<th>Valst. Nr.</th>                             
             </tr>
 	</thead>
 	<tbody>
