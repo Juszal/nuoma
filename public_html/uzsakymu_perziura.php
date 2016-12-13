@@ -48,12 +48,13 @@
             <tr>
 		<th>Nuomos pradžia</th>
 		<th>Nuomos pabaiga</th>
+                <th>Pristatymo vieta</th>
+		<th>Grąžinimo vieta</th>
 		<th>Modelis</th>  
 		<th>Valst. Nr.</th>
-		<th>Pristatymo vieta</th>
-		<th>Grąžinimo vieta</th>
-		<th>Būsena</th>
-                <th></th>
+                <th>Priedai</th>
+                <th>Kliento komentarai</th>
+		<th>Vadybininko komentarai</th>               
             </tr>
 	</thead>
 	<tbody>
