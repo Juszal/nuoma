@@ -6,7 +6,7 @@
     require_once TEMPLATES_PATH . 'menu.php';
     
     if (isset($_POST["navigacija"])){
-        $pavadinimas = $_POST['pavadinimas'];
+        /*$pavadinimas = $_POST['pavadinimas'];
         $zemelapio_metai = $_POST['zemelapio_metai'];
         $istrizaine = $_POST['istrizaine'];
         $vidine_atmintis = $_POST['vidine_atmintis'];
@@ -21,7 +21,8 @@
                             '$vidine_atmintis', '$bluetooth', '$isigyjimo_kaina', 
                             '$komentarai')";
 
-        $result = @mysqli_query($dbc, $query);
+        $result = @mysqli_query($dbc, $query);*/
+     addNavigacija($dbc, $_POST);
     }
     
 ?>

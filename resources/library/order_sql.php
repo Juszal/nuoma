@@ -12,3 +12,21 @@ function getExtras($dbc){
     return $result;
 }
 
+function addNavigacija($dbc, $navPost){
+    $pavadinimas = $navPost['pavadinimas'];
+    $zemelapio_metai = $navPost['zemelapio_metai'];
+    $istrizaine = $navPost['istrizaine'];
+    $vidine_atmintis = $navPost['vidine_atmintis'];
+    $bluetooth = $navPost['bluetooth'];
+    $isigyjimo_kaina = $navPost['isigyjimo_kaina'];
+    $komentarai = $navPost['komentarai'];
+        
+    $query = "INSERT INTO Navigacijos(pavadinimas, zemelapio_metai, istrizaine,
+                                vidine_atmintis, bluetooth, isigyjimo_kaina,
+                                komentarai)
+			VALUES ('$pavadinimas', '$zemelapio_metai', '$istrizaine', 
+                            '$vidine_atmintis', '$bluetooth', '$isigyjimo_kaina', 
+                            '$komentarai')";
+
+    $result = @mysqli_query($dbc, $query);
+}
