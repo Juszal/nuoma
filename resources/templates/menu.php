@@ -27,6 +27,7 @@
                                 <li><a href="<?php echo $config['baseUrl'] . 'irangos_ivedimas.php'?>">Pridėti įrangą</a></li>
                             </ul>
                         </li>
+                        <li><a href="<?php echo $config['baseUrl'] . 'uzsakymu_perziura.php'?>">Užsakymai</a></li>
                     </ul>
 					<?php if(user_logged_in()){?>
 						<ul class="nav navbar-nav navbar-right">
