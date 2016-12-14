@@ -41,21 +41,38 @@ function registruoti($dbc, $post){
 											'".substr(md5(microtime()),rand(0,26),5)."')") or die ("query klaida". mysql_error());
 }
 
-function tikrinkLauka($regex, $laukas, $klaida){
+function tikrinkLauka($regex, $laukas, $klaida, $min, $max){
 	if(!preg_match($regex, $laukas)){
 		echo $klaida;
+		return 1;
+	}
+	if(tikrinkMinMaxLauka($laukas, $min, $max)){
+		echo "<br>per trumpas<br>";
 		return 1;
 	}
 	return 0;
 }
 
-function tikrinkLaukaJeiIvesta($regex, $laukas, $klaida){
+function tikrinkLaukaJeiIvesta($regex, $laukas, $klaida, $min, $max){
 	if(!preg_match($regex, $laukas) && !isset($laukas)){
 		echo $klaida;
 		return 1;
 	}
+	if(tikrinkMinMaxLauka($laukas, $min, $max) && !isset($laukas)){
+		echo "<br>per trumpas<br>";
+		return 1;
+	}
 	return 0;
 }
+
+function tikrinkMinMaxLauka($laukas, $min, $max){
+	if(strlen($min) > $laukas || strlen($max) < $laukas){
+		return true;
+	}
+	return false;
+}
+
+
 
 function arElpastasEgzistuoja($dbc, $email, $klaida){
 	$result = @mysqli_query($dbc, "SELECT `klientas_id` FROM `klientas` WHERE el_pastas = '$email'") or die ("query klaida". mysql_error());
