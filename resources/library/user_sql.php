@@ -72,13 +72,17 @@ function tikrinkMinMaxLauka($laukas, $min, $max){
 	return false;
 }
 
-
-
 function arElpastasEgzistuoja($dbc, $email, $klaida){
 	$result = @mysqli_query($dbc, "SELECT `klientas_id` FROM `klientas` WHERE el_pastas = '$email'") or die ("query klaida". mysql_error());
 	if(mysqli_fetch_array($result)){
 		echo $klaida;
 		return 1;
 	}
+	return 0;
+}
+
+function prijungti($dbc, $fields){
+	$result = @mysqli_query($dbc, "SELECT * FROM klientas WHERE el_pastas = '".$_POST['el_pastas']."' AND slaptazodis = '".md5($_POST['slaptazodis'])."'");
+	while ($row = mysqli_fetch_array($result)){return $row['klientas_id'];}
 	return 0;
 }
